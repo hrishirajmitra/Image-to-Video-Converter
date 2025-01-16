@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image to Video Converter</title>
+    <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='favicon.ico')}}">
+    <link rel="stylesheet" href="../static/css/video_customization.css">
+</head>
+
+<body>
+    <header>
+        <h1>Image to Video Converter</h1>
+        <a href="/" id="logoutBtn" class="Btn logout-button">
+            <div class="sign">
+                <img src="https://imgs.search.brave.com/prHkcEfGZVGgO0Ed9M_uNvjLQ1zY7OkdPBZ-vol-1pw/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jZG4t/aWNvbnMtcG5nLmZy/ZWVwaWsuY29tLzI1/Ni8xODI4LzE4Mjg0/MjcucG5n">
+            </div>
+            <div class="text">Logout</div>
+        </a>
+        <div id="userGreeting" class="user-greeting"></div> <!-- Add a div to display user greeting -->
+    </header>
+
+    <main>
+        <section id="uploadArea" class="drop-area">
+            <h2>Upload Images</h2>
+            <div class="upload-info">Drag & Drop Images Here</div>
+            <label for="fileInput" class="upload-button">Choose Image Files</label>
+            <input type="file" id="fileInput" multiple>
+            <p class="upload-instructions">Supported formats: JPG, PNG, JPEG, GIF</p>
+        </section>
+        <div class="search-box">
+            <div class="search-container">
+                <input class="input" type="text" placeholder="Type something..." style="color: black;">
+                <button class="search-button" href="#">
+                    <svg viewBox="0 0 24 24" class="search__icon" href="#">
+                        <g>
+                            <path
+                                d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z">
+                            </path>
+                        </g>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div id="imageList" class="image-list"></div>
+
+        <section id="MusicArea" class="drop-area" style="margin-top: 4%;">
+            <h2>Choose Music</h2>
+            <button id="AddMusic" class="upload-button">Choose Music</button>
+        </section>
+        <div id="Musiclist" class="image-list"></div>
+
+        <section id="outputSettings">
+            <h2 style="text-align: center">Output Settings</h2>
+            <label for="resolution" style="margin-left: 5%;">Resolution:</label>
+            <select id="resolution">
+                <option value="144p">144p</option>
+                <option value="240p">240p</option>
+                <option value="360p">360p</option>
+            </select>
+            <label for="fps" style="margin-left: 15%;">FPS</label>
+            <select id="fps">
+                <option value="24"> 24 fps </option>
+                <option value="30"> 30 fps </option>
+                <option value="60"> 60 fps </option>
+            </select>
+            <label for="outputFormat" style="margin-left: 15%">Output Format:</label>
+            <select id="outputFormat">
+                <option value="mp4">MP4</option>
+                <option value="mov">MOV</option>
+            </select>
+            <div id="create-video-parent" class="create-video-parent">
+                <button id="create-video" class="create-video"> Create Video </button>
+            </div>
+        </section>
+
+        <div id="createdvideo" style="display: none;">
+            <section id="preview">
+                <h2 style="text-align: center;">Preview</h2>
+                <div class="video-container">
+                    <video id="videoPreview" controls></video>
+                    <div class="center-body" id="loading-animation">
+                        <div class="loader-circle-9">
+                            Loading
+                            <span></span>
+                        </div>
+                    </div>
+                      
+                </div>
+                <div id="previewControls" class="preview-controls">
+                    <button id="playBtn">Pause/ Play</button>
+                    <button id="rewindBtn">Rewind</button>
+                </div>
+            </section>
+
+            <section id="downloadArea">
+                <h2 style="text-align: center;">Download Video</h2>
+                <button id="downloadBtn" style="margin-left: 39.5%;">Download Created Video</button>
+            </section>
+        </div>
+
+    </main>
+    <script src="../static/js/video_customization.js"></script>
+</body>
+
+</html>

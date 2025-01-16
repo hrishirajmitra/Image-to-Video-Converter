@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Login/Register Page</title>
+    <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='favicon.ico')}}">
+    <link rel='stylesheet' href="{{url_for('static', filename='css/index.css')}}">
+</head>
+<body>
+    <div class='container' id='container'>
+        <div class='card' id='card'>
+            <div class='front' id='front' style='display: block;'>
+                <form id='loginForm' style='display: block;'>
+                    <h1>Login</h1>
+                    <div class="login-username form-control">
+                        <input type="text" id="login-username" required>
+                        <label>
+                            <span style="transition-delay:0ms; letter-spacing: -3px;">U</span>
+                            <span style="transition-delay:50ms; letter-spacing: -3px;">s</span>
+                            <span style="transition-delay:100ms; letter-spacing: -3px;">e</span>
+                            <span style="transition-delay:150ms; letter-spacing: -3px;">r</span>
+                            <span style="transition-delay:200ms; letter-spacing: -3px;">n</span>
+                            <span style="transition-delay:250ms; letter-spacing: -3px;">a</span>
+                            <span style="transition-delay:300ms; letter-spacing: -3px;">m</span>
+                            <span style="transition-delay:350ms">e</span>
+                        </label>
+                    </div>
+                    <div class="login-password password-holder form-control">
+                        <input type="password" id="login-password" class="password-input" required>
+                        <label>
+                            <span style="transition-delay:0ms; letter-spacing: -3px;">P</span>
+                            <span style="transition-delay:50ms; letter-spacing: -3px;">a</span>
+                            <span style="transition-delay:100ms; letter-spacing: -3px;">s</span>
+                            <span style="transition-delay:150ms; letter-spacing: -3px;">s</span>
+                            <span style="transition-delay:200ms; letter-spacing: -3px;">w</span>
+                            <span style="transition-delay:250ms; letter-spacing: -3px;">o</span>
+                            <span style="transition-delay:300ms; letter-spacing: -3px;">r</span>
+                            <span style="transition-delay:350ms">d</span>
+                        </label>
+                        <div class="toggle-password" id="toggleLoginPassword">
+
+                        </div>
+                    </div>
+                    <button id="login-button" class="login-button" type='submit'>Login</button>
+                    <div id='invalid-username' class='invalid-username' style='display: none;'>
+                        Incorrect username/password.
+                    </div>
+                </form>
+
+                <div class='loginSwitch' style='display: block;'>
+                    <p> Don't have an account? <a href='#' id='switchForm'>Register</a></p>
+                </div>
+            </div>
+
+            <div class='back' id='back' style='display: none;'>
+                <form id='registerForm' style='display: none;'>
+                    <h1>Register</h1>
+                    <div class="register-username form-control">
+                        <input type="text" id="register-username" required>
+                        <label>
+                            <span style="transition-delay:0ms; letter-spacing: -3px;">U</span>
+                            <span style="transition-delay:50ms; letter-spacing: -3px;">s</span>
+                            <span style="transition-delay:100ms; letter-spacing: -3px;">e</span>
+                            <span style="transition-delay:150ms; letter-spacing: -3px;">r</span>
+                            <span style="transition-delay:200ms; letter-spacing: -3px;">n</span>
+                            <span style="transition-delay:250ms; letter-spacing: -3px;">a</span>
+                            <span style="transition-delay:300ms; letter-spacing: -3px;">m</span>
+                            <span style="transition-delay:350ms">e</span>
+                        </label>
+                    </div>
+                    <div class="register-email form-control">
+                        <input type="text" id="register-email" required>
+                        <label>
+                            <span style="transition-delay:0ms; letter-spacing: -3px;">E</span>
+                            <span style="transition-delay:50ms; letter-spacing: -3px;">m</span>
+                            <span style="transition-delay:100ms; letter-spacing: -5px;">a</span>
+                            <span style="transition-delay:150ms; letter-spacing: -40px;">i</span>
+                            <span style="transition-delay:200ms">l</span>
+                        </label>
+                    </div>
+                    <div class="register-name form-control">
+                        <input type="text" id="register-name" required>
+                        <label>
+                            <span style="transition-delay:0ms; letter-spacing: -3px;">F</span>
+                            <span style="transition-delay:50ms; letter-spacing: -3px;">i</span>
+                            <span style="transition-delay:100ms; letter-spacing: -3px;">r</span>
+                            <span style="transition-delay:150ms; letter-spacing: -3px;">s</span>
+                            <span style="transition-delay:200ms; letter-spacing: -3px;">t</span>
+                            <span style="transition-delay:250ms; letter-spacing: -3px;"> </span>
+                            <span style="transition-delay:300ms; letter-spacing: -3px;">N</span>
+                            <span style="transition-delay:350ms; letter-spacing: -3px;">a</span>
+                            <span style="transition-delay:400ms; letter-spacing: -3px;">m</span>
+                            <span style="transition-delay:450ms">e</span>
+                        </label>
+                    </div>
+                    <div class="register-password password-holder form-control">
+                        <input type="password" id="register-password" required>
+                        <label>
+                            <span style="transition-delay:0ms; letter-spacing: -3px;">P</span>
+                            <span style="transition-delay:50ms; letter-spacing: -3px;">a</span>
+                            <span style="transition-delay:100ms; letter-spacing: -3px;">s</span>
+                            <span style="transition-delay:150ms; letter-spacing: -3px;">s</span>
+                            <span style="transition-delay:200ms; letter-spacing: -3px;">w</span>
+                            <span style="transition-delay:250ms; letter-spacing: -3px;">o</span>
+                            <span style="transition-delay:300ms; letter-spacing: -3px;">r</span>
+                            <span style="transition-delay:350ms">d</span>
+                        </label>
+
+                        <div class="toggle-password" id="toggleRegisterPassword">
+
+                        </div>
+                    </div>
+
+                    <div class="dynamic-condition-list" id="dynamic-condition-list">
+                        <ul>
+                            <li id = 'register-username-unique' class='register-username-unique'> Username must be unique </li>
+                            <li id = 'register-username-length' class='register-username-length'> Username must be atmost 20 characters </li>
+                            <li id = 'register-username-admin' class='register-username-admin'> Username should not be named admin </li>
+                            <li id = 'register-email-length' class='register-email-length'> Email must be atmost 40 characters </li>
+                            <li id = 'register-email-authentication' class='register-email-authentication'> Email must be valid </li>
+                            <li id = 'register-name-length' class='register-name-length'> Name must be atmost 20 characters </li>
+                            <li id = 'register-password-length' class='register-password-length'> Password must be between 8 and 20 characters </li>
+                            <li id = 'register-password-number' class='register-password-number'> Password must contain atleast 1 numeric character </li>
+                            <li id = 'register-password-capital' class='register-password-capital'> Password must contain atleast 1 capital letter </li>
+                            <li id = 'register-password-special' class='register-password-special'> Password must contain atleast 1 special character </li>
+                            <li id = 'register-no-space' class='register-no-space'> None of the entries must contain a space </li>
+                        </ul>
+                    </div>
+                    <button id="register-button" class="register-button" type='submit'>Register</button>
+                </form>
+
+                <div class='registerSwitch' style='display: none;'>
+                    <p> Already have an account? <a href='#' id='switchForm'>Login</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{{url_for('static', filename='js/index.js')}}"></script>
+</body>
+</html>

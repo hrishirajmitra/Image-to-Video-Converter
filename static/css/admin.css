@@ -1,0 +1,141 @@
+/* admin.css */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #222; /* Match video_customization.css background color */
+    color: #fff; /* Match video_customization.css text color */
+}
+
+.admin-container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #04444e; /* Match video_customization.css sidebar background color */
+    color: #f5f5dc; /* Match video_customization.css sidebar text color */
+    padding-top: 20px;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Match video_customization.css main background color */
+    border-radius: 20px; /* Match video_customization.css main border radius */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Match video_customization.css main box shadow */
+    backdrop-filter: blur(10px); /* Match video_customization.css main backdrop filter */
+    color: #333; /* Match video_customization.css main text color */
+}
+
+.content h2 {
+    color: #04444e; /* Match video_customization.css header text color */
+    margin-bottom: 20px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px; /* Match video_customization.css card border radius */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Match video_customization.css card box shadow */
+    padding: 20px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+/* Define styles for table headers */
+th {
+    background-color: #04444e; /* Match video_customization.css table header background color */
+    color: #f5f5dc; /* Match video_customization.css table header text color */
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+/* Define styles for table cells */
+td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+/* Define alternate row color */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+.logout-button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    /* Adjust top position as needed */
+    right: 20px;
+    /* Adjust right position as needed */
+    overflow: hidden;
+    transition-duration: 0.7s;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+    background-color: RGB(29, 185, 84);
+}
+
+.logout-button .sign {
+    width: 100%;
+    transition-duration: 0.7s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logout-button .sign img {
+    width: 28px;
+    /* Adjust width as needed */
+    margin-right: 5px;
+    margin-left: 7px;
+    margin-top: 3px;
+    /* Adjust margin as needed */
+}
+
+
+.logout-button .text {
+    position: absolute;
+    right: 0%;
+    width: 0%;
+    opacity: 0;
+    color: black;
+    font-size: 1.2em;
+    font-weight: 600;
+    transition-duration: 0.7s;
+}
+
+.logout-button:hover {
+    width: 125px;
+    border-radius: 40px;
+    transition-duration: 0.7s;
+}
+
+.logout-button:hover .sign {
+    width: 0%;
+    transition-duration: 0.7s;
+    margin-right: 20px;
+    padding-left: 20px;
+}
+
+.logout-button:hover .text {
+    opacity: 1;
+    width: 70%;
+    transition-duration: 0.7s;
+    padding-left: 3px;
+}
+
+.logout-button:active {
+    transform: translate(2px, 2px);
+}

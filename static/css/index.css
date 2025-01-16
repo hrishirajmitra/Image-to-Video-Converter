@@ -1,0 +1,245 @@
+body {
+    font-family: sans-serif;
+    background-image: linear-gradient(to bottom, #06aacf, #00ff88);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.container {
+    position: absolute;
+    height: 320px;
+    width: 300px;
+    padding: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #04444e;
+    color: #f5f5dc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: height 1s ease;
+}
+
+.card {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    transform-style: preserve-3d;
+    transition: all 0.8s ease;
+}
+
+.front {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+  
+.back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    overflow: hidden;
+    text-align: center;
+    transform: rotateY(180deg);
+    width: 100%;
+    height: 100%;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+input:focus {
+    background-color: #EEEEEE;
+}
+
+button {
+    width: 7em;
+    height: 2em;
+    border-radius: 30em;
+    font-size: 15px;
+    font-family: inherit;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+   
+button::before {
+    content: '';
+    width: 0;
+    height: 2em;
+    border-radius: 30em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to right, #0fd850 0%, #f9f047 100%);
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+}
+
+button:hover::before {
+    width: 9em;
+}
+
+.loginSwitch, .registerSwitch {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.loginSwitch a, .registerSwitch a {
+    text-decoration: underline;
+    color: #4CAF50;
+    cursor: pointer;
+}
+
+.loginSwitch a:hover, .registerSwitch a:hover {
+    color: #67c561;
+}
+
+ul {
+    text-align: left;
+    font-size: 12px;
+    list-style-position: outside;
+    padding-left: 20px;
+}
+
+.invalid-username {
+    color: #ed655e;
+}
+
+.form-control {
+    position: relative;
+    margin: 20px 0 30px;
+    width: 300px;
+}
+
+.form-control input {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px #fff solid;
+    display: block;
+    width: 100%;
+    padding: 15px 0;
+    font-size: 18px;
+    color: #fff;
+}
+
+.form-control input:focus,
+.form-control input:valid {
+    outline: 0;
+    border-bottom-color: lightblue;
+}
+
+.form-control label {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    pointer-events: none;
+}
+
+.form-control label span {
+    display: inline-block;
+    font-size: 20px;
+    min-width: 5px;
+    color: #fff;
+    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.form-control input:focus+label span,
+.form-control input:valid+label span {
+    color: lightblue;
+    transform: translateY(-30px);
+}
+
+.password-holder {
+    position: relative;
+}
+
+.password-holder .toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.password-holder input[type="password"] {
+    padding-right: 30px;
+}
+
+.password-holder .toggle-password::before {
+    content: '\1F441';
+    font-size: 18px;
+    color: #555;
+    position: relative;
+}
+
+.password-holder .toggle-password-dynamic::after {
+    content: '✖';
+    font-size: 24px;
+    color: red;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.password-holder input[type="password"] {
+    padding-right: 30px;
+}
+
+.password-holder input[type="password"]:not(:focus) + .toggle-password::after {
+    display: none;
+}
+
+.password-holder .toggle-password::before {
+    content: '\1F441'; 
+    font-size: 18px;
+    color: white;
+    position: relative;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px #04444e inset;
+    -webkit-text-fill-color: white;
+    caret-color: white;
+}
+
+.register-username-unique,
+.register-username-length,
+.register-username-admin,
+.register-email-length,
+.register-email-authentication,
+.register-name-length,
+.register-password-length,
+.register-password-number,
+.register-password-capital,
+.register-password-special,
+.register-no-space {
+    color: white;
+}

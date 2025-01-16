@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Admin Page</title>
+        <link rel='stylesheet' href="{{url_for('static', filename='css/admin.css')}}">
+    </head>
+    <body>
+
+        <div class="admin-container">
+
+            <div class="content">
+                <h2>Dashboard</h2>
+                <div class="card">
+                    <!-- Your dashboard content goes here -->
+                    <p> Welcome to the Admin Dashboard. The following users have joined the website. </p>
+                    <table id="table">
+                        
+                    </table>
+                </div>
+                <a href="/" id="logoutBtn" class="Btn logout-button">
+                    <div class="sign">
+                        <img src="https://imgs.search.brave.com/prHkcEfGZVGgO0Ed9M_uNvjLQ1zY7OkdPBZ-vol-1pw/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jZG4t/aWNvbnMtcG5nLmZy/ZWVwaWsuY29tLzI1/Ni8xODI4LzE4Mjg0/MjcucG5n">
+                    </div>
+                    <div class="text">Logout</div>
+                </a>
+            </div>
+        </div>
+
+    </body>
+    <script src="{{url_for('static', filename='js/admin.js')}}"></script>
+</html>

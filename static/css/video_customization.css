@@ -1,0 +1,664 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(to bottom, #06aacf, #00ff88);
+    color: #333;
+    overflow-x: hidden;
+}
+
+.music-item {
+    border: 1px solid #ccc;
+    border-radius: 4%;
+    padding: 10px;
+    margin-bottom: 10px;
+    position: relative; /* Ensure proper positioning of the remove button */
+}
+
+.remove-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: black;
+    color: red;
+    border: none;
+    padding: 2px 5px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 50%;
+}
+
+.music-info {
+    align-items: center;
+}
+
+.search-box {
+    position: relative;
+    background: linear-gradient(to bottom, #06aacf, #00ff88);
+    border-radius: 1000px;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end; /* Align items to the right */
+    align-items: center; /* Center vertically */
+    place-content: center;
+    z-index: 0;
+    max-width: 300px;
+    margin: 40px 10px;
+    margin-left: 70%;
+}
+  
+.search-container {
+    position: relative;
+    width: 100%;
+    border-radius: 50px;
+    background: linear-gradient(135deg, rgb(218, 232, 247) 0%, rgb(214, 229, 247) 100%);
+    padding: 5px;
+    display: flex;
+    align-items: center;
+}
+  
+.search-container::after, .search-container::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    position: absolute;
+}
+  
+.search-container::before {
+    top: -1px;
+    left: -1px;
+    background: linear-gradient(0deg, rgb(218, 232, 247) 0%, rgb(255, 255, 255) 100%);
+    z-index: -1;
+}
+  
+.search-container::after {
+    bottom: -1px;
+    right: -1px;
+    box-shadow: rgba(79, 156, 232, 0.7019607843) 3px 3px 5px 0px, rgba(79, 156, 232, 0.7019607843) 5px 5px 20px 0px;
+    z-index: -2;
+}
+  
+.input {
+    padding-left: 10px;
+    width: 100%;
+    background: linear-gradient(135deg, rgb(218, 232, 247) 0%, rgb(214, 229, 247) 100%);
+    border: none;
+    color: black;
+    font-size: 18px;
+    border-radius: 50px;
+}
+  
+.input:focus {
+    outline: none;
+}
+
+.search-button {
+    border: none;
+    background: linear-gradient(135deg, rgb(218, 232, 247) 0%, rgb(214, 229, 247) 100%);
+    border-radius: 50%;
+}
+  
+.search__icon {
+    width: 50px;
+    aspect-ratio: 1;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    border-radius: 50%;
+    padding-left: 12px;
+    margin-right: 10px;
+}
+  
+.search__icon path {
+    fill: black;
+}
+
+header {
+    background-color: #04444e;
+    color: #f5f5dc;
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 4px solid #7373731b;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 48px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+main {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.user-greeting {
+    position: absolute;
+    right: 1%;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+.drop-area {
+    border: 3px dashed rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+    transition: border-color 0.3s;
+}
+
+.drop-area:hover {
+    border-color: rgba(0, 0, 0, 0.5);
+}
+
+.upload-info {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.upload-instructions {
+    font-size: 16px;
+    color: #666;
+}
+
+.image-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.image-container {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    border: none;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    /* 16:9 Aspect Ratio */
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.preview-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.preview-controls button {
+    background-color: #1976d2;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.preview-controls button:hover {
+    background-color: #1565c0;
+}
+
+#outputSettings select,
+#outputSettings input[type="range"] {
+    width: 10%;
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(5px);
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+    margin: 5px;
+    border: 2px solid #ccc;
+    /* Add borders to the image container */
+    border-radius: 10px;
+    /* Optional: Add rounded corners */
+    overflow: hidden;
+    /* Ensure the delete icon stays within the container */
+    /* Adjust width and height to ensure the container fits its content */
+    width: fit-content;
+    height: fit-content;
+}
+
+.image-container img {
+    max-width: 86%;
+    height: auto;
+    display: block;
+}
+
+.delete-icon:before,
+.close:before {
+    content: '✕';
+    /* Red cross symbol */
+    color: red;
+    /* Change color to white */
+    font-size: 16px;
+    /* Adjust size of the cross */
+    background-color: black;
+    /* Black circular background */
+    border-radius: 50%;
+    /* Make it circular */
+    width: 20px;
+    /* Set width */
+    height: 20px;
+    /* Set height */
+    position: absolute;
+    /* Position the cross */
+    top: 5px;
+    /* Position from the top */
+    right: 5px;
+    /* Position from the right */
+    cursor: pointer;
+    /* Show pointer cursor on hover */
+    display: flex;
+    /* Flex container */
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+}
+
+.wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+/* CSS code to style the delete icon */
+.delete-icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 20px;
+    /* Adjust icon size as needed */
+    height: 20px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.delete-icon:hover {
+    opacity: 1;
+}
+
+/* Hide the file input button */
+#fileInput {
+    position: absolute;
+    left: -1000px;
+}
+
+#bgMusicUpload {
+    position: absolute;
+    left: -1000px;
+}
+
+/* Style the label to look like a button */
+.upload-button,
+#downloadBtn, .create-video {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #1976d2;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Style the remove button */
+#removeMusicBtn {
+    font-size: 16px;
+    background-color: #c62828;
+    /* Red background color */
+    color: #fff;
+    /* Text color */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 10px 15px;
+    margin-top: 30px;
+    transition: background-color 0.3s;
+}
+
+#removeMusicBtn:hover {
+    background-color: #b71c1c;
+    /* Darker red on hover */
+}
+
+/* Style the download button similar to play, pause, and rewind buttons */
+#downloadBtn {
+    background-color: #1976d2;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 13px 20px;
+    margin-top: 10px;
+}
+
+#downloadBtn:hover {
+    background-color: #1565c0;
+}
+
+.filename-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font: 16px;
+}
+
+.upload-button, .create-video {
+    background-color: #1976d2;
+}
+
+.upload-button:hover, .create-video:hover {
+    background-color: #1565c0;
+}
+
+.create-video-parent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Add some space between image containers and options */
+.options-wrapper {
+    margin-top: 10px;
+}
+
+/* Style transition dropdown */
+.transition-dropdown,.music-dropdown  {
+    width: calc(70% - 5px);
+    /* Adjust width */
+    margin-right: 5px;
+    padding: 10px;
+    margin-left: 23px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(5px);
+    font-size: 16px;
+}
+
+/* Style duration input */
+.duration-input {
+    width: calc(82% - 5px);
+    /* Adjust width */
+    margin-left: 5px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-left: 23px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(5px);
+    font-size: 16px;
+}
+
+/* Style the upload button for background music */
+.upload-button-music {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #1976d2;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.upload-button-music:hover {
+    background-color: #1565c0;
+}
+
+.logout-button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    /* Adjust top position as needed */
+    right: 20px;
+    /* Adjust right position as needed */
+    overflow: hidden;
+    transition-duration: 0.7s;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+    background-color: RGB(29, 185, 84);
+}
+
+.logout-button .sign {
+    width: 100%;
+    transition-duration: 0.7s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logout-button .sign img {
+    width: 28px;
+    /* Adjust width as needed */
+    margin-right: 5px;
+    margin-left: 7px;
+    margin-top: 3px;
+    /* Adjust margin as needed */
+}
+
+
+.logout-button .text {
+    position: absolute;
+    left: 26%;
+    width: 0%;
+    opacity: 0;
+    color: black;
+    font-size: 1.2em;
+    font-weight: 600;
+    transition-duration: 0.7s;
+}
+
+.logout-button:hover {
+    width: 125px;
+    border-radius: 40px;
+    transition-duration: 0.7s;
+}
+
+.logout-button:hover .sign {
+    width: 0%;
+    transition-duration: 0.7s;
+    padding-left: 20px;
+}
+
+.logout-button:hover .text {
+    opacity: 1;
+    width: 70%;
+    transition-duration: 0.7s;
+    padding-right: 10px;
+}
+
+.logout-button:active {
+    transform: translate(2px, 2px);
+}
+
+.image-list-upload-button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    background-color: #1976d2;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.image-list-upload-button:hover {
+    background-color: #1565c0;
+}
+
+.image-list-upload-button-parent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.error-text {
+    padding-left: 5px;
+    padding-right: 5px;
+    color: red;
+    align-items: center;
+}
+
+.image-list-upload-button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    background-color: #1976d2;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.image-list-upload-button:hover {
+    background-color: #1565c0;
+}
+
+.image-list-upload-button-parent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.center-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: #262626;
+}
+  
+.loader-circle-9 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 70px;
+    background: transparent;
+    border: 3px solid #3c3c3c;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 70px;
+    font-family: sans-serif;
+    font-size: 12px;
+    color: #00eaff;
+    text-transform: uppercase;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+  
+.loader-circle-9:before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    width: 100%;
+    height: 100%;
+    border: 3px solid transparent;
+    border-top: 3px solid #00eaff;
+    border-right: 3px solid #00eaff;
+    border-radius: 50%;
+    animation: animateC 2s linear infinite;
+}
+  
+.loader-circle-9 span {
+    display: block;
+    position: absolute;
+    top: calc(50% - 2px);
+    left: 50%;
+    width: 50%;
+    height: 4px;
+    background: transparent;
+    transform-origin: left;
+    animation: animate 2s linear infinite;
+}
+  
+.loader-circle-9 span:before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #00eaff;
+    top: -6px;
+    right: -8px;
+    box-shadow: 0 0 20px #00eaff;
+}
+  
+@keyframes animateC {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+}
+  
+@keyframes animate {
+    0% {
+      transform: rotate(45deg);
+    }
+    100% {
+      transform: rotate(405deg);
+    }
+}
